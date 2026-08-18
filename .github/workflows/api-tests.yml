@@ -25,7 +25,7 @@ jobs:
 
       - name: Run API tests
         env:
-          BOOKER_USERNAME: ${{ secrets.BOOKER_USERNAME }}
-          BOOKER_PASSWORD: ${{ secrets.BOOKER_PASSWORD }}
+          BOOKER_USERNAME: "${{ secrets.BOOKER_USERNAME }}"
+          BOOKER_PASSWORD: "${{ secrets.BOOKER_PASSWORD }}"
         run: mvn clean test
 		        
