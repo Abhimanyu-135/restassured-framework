@@ -1,6 +1,12 @@
 name: API Automation Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   api-tests:
@@ -18,7 +24,7 @@ jobs:
           cache: maven
 
       - name: Run API tests
-      env:
-       BOOKER_USERNAME: ${{ secrets.BOOKER_USERNAME }}
-       BOOKER_PASSWORD: ${{ secrets.BOOKER_PASSWORD }}
-      run: mvn clean test
+        env:
+          BOOKER_USERNAME: ${{ secrets.BOOKER_USERNAME }}
+          BOOKER_PASSWORD: ${{ secrets.BOOKER_PASSWORD }}
+        run: mvn clean test
