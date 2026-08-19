@@ -29,6 +29,9 @@
         <extentreports.version>5.1.1</extentreports.version>
         <jakarta.mail.version>2.0.1</jakarta.mail.version>
 
+        <!-- Allure -->
+        <allure.version>2.35.3</allure.version>
+
         <!-- Plugins -->
         <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.5.0</maven.surefire.plugin.version>
@@ -56,6 +59,14 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             
+        </dependency>
+
+        <!-- Allure TestNG -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Jackson -->
