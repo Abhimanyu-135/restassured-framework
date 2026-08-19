@@ -36,6 +36,14 @@ jobs:
           EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: mvn clean test
 
+      - name: Publish Test Results
+        if: always()
+        uses: dorny/test-reporter@v2
+        with:
+          name: API Automation Test Results
+          path: target/surefire-reports/TEST-TestSuite.xml
+          reporter: java-junit
+
       - name: Upload Extent Report
         if: always()
         uses: actions/upload-artifact@v4
