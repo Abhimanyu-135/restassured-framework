@@ -46,7 +46,7 @@ jobs:
 
       - name: Upload Extent Report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: extent-report
           path: test-output/ExtentReport.html
@@ -55,7 +55,7 @@ jobs:
 
       - name: Upload Surefire Reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: surefire-reports
           path: target/surefire-reports/
