@@ -42,6 +42,15 @@ jobs:
         if: always()
         run: mvn allure:report
 
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin/
+          if-no-files-found: warn
+          retention-days: 14  
+
       - name: Publish Test Results
         if: always()
         uses: dorny/test-reporter@v3
